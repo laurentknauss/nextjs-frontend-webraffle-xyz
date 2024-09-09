@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* globals.css */ 
+
+
+  /* globals.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: linear-gradient(175deg, #ff7e5f 0%, #00d2ff 100%);
+  }
+  

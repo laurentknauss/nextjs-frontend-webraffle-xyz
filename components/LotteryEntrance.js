@@ -110,7 +110,7 @@ export default function LotteryEntrance() {
     }
 
     return (
-        <div className="p-5">
+        <div className="p-5  background-color: linear-gradient(175deg, #ff7e5f 0%, #00d2ff 100%)">
             <h1 className="py-4 px-4 font-bold text-3xl">Lottery</h1>
             {raffleAddress ? (
                 <>
