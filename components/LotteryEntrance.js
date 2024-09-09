@@ -144,7 +144,7 @@ export default function LotteryEntrance() {
                     <div className="font-bold"> Entrance Fee: {ethers.utils.formatUnits(entranceFee, "ether")} ETH</div><br/> 
                     <div className="font-bold"> The current number of players is  {numberOfPlayers}</div><br/>
                     <div className="font-bold"> The most previous winner was wallet   {recentWinner}</div><br/> 
-                    <div className="font-bold"> The smart contract address you are interacting with  {raffleAddress} </div>
+                    <div className="font-bold"> The smart contract address you are interacting with is  {raffleAddress} on  chain id {chainId} </div>
                 </>
             ) : (
                 <div>Please connect to a supported chain </div>
