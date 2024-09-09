@@ -17,6 +17,7 @@ export default function LotteryEntrance() {
     const [entranceFee, setEntranceFee] = useState("0")
     const [numberOfPlayers, setNumberOfPlayers] = useState("0")
     const [recentWinner, setRecentWinner] = useState("0")
+    const [contractAddress, setContractAddress] = useState("0")
 
     const dispatch = useNotification()
 
@@ -53,6 +54,13 @@ export default function LotteryEntrance() {
         abi: abi,
         contractAddress: raffleAddress,
         functionName: "getRecentWinner",
+        params: {},
+    })
+
+    const { runContractFunction: getContractAddress } = useWeb3Contract({
+        abi:abi,
+        contractAddress: raffleAddress,
+        functionName: "getContractAddress",
         params: {},
     })
 
@@ -132,9 +140,11 @@ export default function LotteryEntrance() {
                             "Enter Raffle"
                         )}
                     </button>
-                    <div>Entrance Fee: {ethers.utils.formatUnits(entranceFee, "ether")} ETH</div>
-                    <div>The current number of players is: {numberOfPlayers}</div>
-                    <div>The most previous winner was: {recentWinner}</div>
+                    <br/> 
+                    <div className="font-bold"> Entrance Fee: {ethers.utils.formatUnits(entranceFee, "ether")} ETH</div><br/> 
+                    <div className="font-bold"> The current number of players is  {numberOfPlayers}</div><br/>
+                    <div className="font-bold"> The most previous winner was wallet   {recentWinner}</div><br/> 
+                    <div className="font-bold"> The smart contract address you are interacting with  {raffleAddress} </div>
                 </>
             ) : (
                 <div>Please connect to a supported chain </div>
